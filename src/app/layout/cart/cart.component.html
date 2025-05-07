@@ -1,0 +1,211 @@
+<div class="container mt-5">
+    <p-toast position="center"></p-toast>
+
+    <div class="grid" *ngIf="items.length==0">
+        <div class="col-12 p-5">
+            <div class="text-center text-500 text-sm p-5">
+                <h6>سبد خرید شما خالی است.</h6>
+            </div>
+        </div>
+    </div>
+
+    <p-stepper *ngIf="items.length > 0" [(activeStep)]="active"
+        [linear]="true">
+
+        <p-stepperPanel>
+            <ng-template pTemplate="header">
+                <div class="header-with-icon">
+                    <i class="pi pi-shopping-cart"></i>
+                    <span>سبد خرید</span>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
+                <div class="grid">
+                    <div class="col-12 md:col-9 space-y-3">
+                        <p-dataView #dv [value]="items">
+                            <ng-template pTemplate="list" let-items>
+                                <div *ngFor="let item of items" class="surface-card custom-card  shadow-2 p-3 mb-3">
+                                    <div class="flex flex-row gap-3 items-center">
+                                        <div class="w-4 sm:w-2 flex justify-center">
+                                            <img class="w-4rem h-4rem sm:w-6rem sm:h-6rem border-round object-cover"
+                                                [src]="item.image" [alt]="item.title" />
+                                        </div>
+                                        <div class="flex-1 flex flex-column justify-between gap-2">
+                                            <div class="text-xs sm:text-sm font-semibold">{{ item.title }}</div>
+                                            <hr class="my-2" style="border: 0.5px solid #ccc;" />
+                                            <div class="flex flex-wrap gap-4 items-center">
+                                                <div class="flex items-center counter w-5rem h-2rem px-1 shadow-2">
+                                                    <button class="btn px-2" (click)="increase(item)">+</button>
+                                                    <span>{{ item.number }}</span>
+                                                    <button class="btn px-2" (click)="decrease(item)">-</button>
+                                                </div>
+                                                <div class="flex items-center gap-2">
+                                                    <span class="text-xs sm:text-sm">رنگ:</span>
+                                                    <div class="w-1rem h-1rem border-circle"
+                                                        [ngStyle]="{ 'background-color': item.colorCode || '#ccc' }">
+                                                    </div>
+                                                </div>
+                                                <div class="text-xs sm:text-sm font-bold min-w-[6rem]">
+                                                    <span>{{ item.price | number }} تومان</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+
+                                        <div class="text-right self-start">
+                                            <button pButton icon="pi pi-trash"
+                                                class="p-button-sm p-button-rounded p-button-text p-button-danger"
+                                                (click)="onDeleteCart(item)"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </p-dataView>
+                    </div>
+
+                    <div class="col-12 md:col-3">
+                        <div class="surface-card border-round shadow-2 p-4">
+                            <h6 class="mb-3 text">خلاصه سفارش</h6>
+                            <div class="flex justify-content-between mb-2 text-sm">
+                                <span>جمع کالاها:</span>
+                                <strong>{{ sum(items) | number }} تومان</strong>
+                            </div>
+                            <div class="flex justify-content-between mb-2 text-sm">
+                                <span>هزینه ارسال:</span>
+                                <strong>25,000 تومان</strong>
+                            </div>
+                            <hr class="my-2" />
+                            <div class="flex justify-content-between mt-3 text-sm font-bold">
+                                <span>مبلغ نهایی:</span>
+                                <span class="text-green-700">{{ sum(items) + 25000 | number }} تومان</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-content-end mt-4">
+                    <p-button label="ثبت سفارش" iconPos="right" (onClick)="goInfo()"></p-button>
+                </div>
+            </ng-template>
+        </p-stepperPanel>
+
+        <p-stepperPanel>
+            <ng-template pTemplate="header">
+                <div class="header-with-icon">
+                    <i class="pi pi-user"></i>
+                    <span>مشخصات</span>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback"
+                let-index="index">
+                <div class="card">
+                    <form [formGroup]="form" (ngSubmit)="editUser()" class="w-100">
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-12 mb-3">
+                                <label>موبایل</label>
+                                <input type="text" pInputText formControlName="mobile" [disabled]="true" />
+                            </div>
+
+                            <div class="col-lg-4 mb-3">
+                                <label>نام و نام خانوادگی *</label>
+                                <input type="text" pInputText formControlName="fullName"
+                                    [ngClass]="{'p-invalid': isFieldInvalid('fullName')}" />
+                                <small *ngIf="isFieldInvalid('fullName')" class="p-error">نام و نام خانوادگی الزامی
+                                    است.</small>
+                            </div>
+
+                            <div class="col-lg-4 mb-3">
+                                <label>تلفن</label>
+                                <input type="text" pInputText pKeyFilter="num" formControlName="phone" maxlength="11"
+                                    minlength="11" />
+                            </div>
+
+                            <div class="col-lg-4 mb-3">
+                                <label>ایمیل</label>
+                                <input type="email" pKeyFilter="email" pInputText formControlName="email" />
+                            </div>
+
+
+                            <div class="col-lg-4 mb-3">
+                                <label>استان * </label>
+                                <p-dropdown emptyFilterMessage="یافت نشد" emptyMessage="یافت نشد" [options]="states"
+                                    optionLabel="label" (onChange)="stateOnChange($event)" [filter]="true"
+                                    filterBy="label">
+                                </p-dropdown>
+                            </div>
+                            <div class="col-lg-4 mb-3">
+                                <label>شهرستان *</label>
+                                <p-dropdown emptyFilterMessage="یافت نشد" emptyMessage="یافت نشد" [options]="cities"
+                                    optionLabel="label" (onChange)="cityOnChange($event)" [filter]="true"
+                                    filterBy="label">
+                                </p-dropdown>
+                            </div>
+
+                            <div class="col-lg-6 mb-3">
+                                <label>آدرس *</label>
+                                <textarea rows="4" pInputText formControlName="address"
+                                    [ngClass]="{'p-invalid': isFieldInvalid('address')}" required></textarea>
+                                <small *ngIf="isFieldInvalid('address')" class="p-error">آدرس الزامی است.</small>
+                            </div>
+
+                            <div class="col-lg-6 mb-3">
+                                <label>کد پستی *</label>
+                                <input type="text" pInputText pKeyFilter="num" maxlength="10" minlength="10"
+                                    formControlName="postalCode"
+                                    [ngClass]="{'p-invalid': isFieldInvalid('postalCode')}" />
+                                <small *ngIf="isFieldInvalid('postalCode')" class="p-error">کد پستی الزامی است.</small>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="flex pt-4 justify-content-between">
+                    <p-button label="قبل" icon="pi pi-arrow-right" (onClick)="prevCallback.emit()" />
+                    <p-button label="بعد" icon="pi pi-arrow-left" iconPos="right" (onClick)="editUser()" />
+                </div>
+            </ng-template>
+        </p-stepperPanel>
+
+        <p-stepperPanel>
+            <ng-template pTemplate="header">
+                <div class="header-with-icon">
+                    <i class="pi pi-credit-card"></i>
+                    <span>پرداخت نهایی</span>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="content" let-prevCallback="prevCallback" let-index="index">
+                <div class="flex flex-column h-12rem">
+                    <p-table [value]="[[]]">
+                        <ng-template class="lg" pTemplate="caption">جزییات سفارش</ng-template>
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>مبلغ پرداخت</th>
+                                <th>هزینه ارسال</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body">
+                            <tr>
+                                <td>{{ sum(items) / 10 | number }} تومان</td>
+                                <td>{{ 250000 / 10 | number }} تومان</td>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="summary">
+                            <tr>
+                                <th>کل مبلغ پرداخت :</th>
+                                <td>{{ sum(items) / 10 + 250000 / 10 | number }} تومان</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+                <div class="flex pt-4 justify-content-between">
+                    <p-button label="قبل" icon="pi pi-arrow-right" (onClick)="prevCallback.emit()" />
+                    <p-button label="پرداخت" icon="pi pi-credit-card" iconPos="left" (onClick)="onPayment()" />
+                </div>
+            </ng-template>
+        </p-stepperPanel>
+    </p-stepper>
+
+
+
+
+</div>

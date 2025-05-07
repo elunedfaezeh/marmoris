@@ -1,0 +1,218 @@
+:host {
+  display: block;
+  direction: rtl;
+}
+
+body {
+  background-color: #dae8d3;
+  font-family: "num";
+  // color: #444;
+  border-radius: 15px;
+}
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  font-family: "num";
+}
+
+.sidebar {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  width: 220px;
+  background-color: #f9f7dc;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
+  transition: width 0.3s ease;
+  gap: 1rem;
+  color: #fff;
+
+  .sidebar-btn {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #fff;
+    border-radius: 8px;
+    padding: 0 1rem;
+    font-size: 0.95rem;
+    // transition: all 0.2s ease;
+    
+    .p-button-icon {
+      font-size: 1.2rem;
+      margin-inline-end: 0.5rem;
+      color: #440d0d;
+    }
+
+     .p-button-label {
+      white-space: nowrap;
+      
+    }
+
+  }
+
+  .p-button-danger {
+    margin-top: auto;
+    background-color: #f7a6a6 !important;
+    color: #fff !important;
+  }
+}
+
+:host::ng-deep .p-button {
+  background-color: transparent;
+  border: none;
+  color: #262525;
+  font-size: 12px;
+  gap: 5px;
+  font-weight: normal;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #FFE1E1;
+  overflow-x: hidden;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+
+  // .dashboard-title {
+  //   font-size: 2rem;
+  //   margin-bottom: 1.5rem;
+  //   color: #3a3a3a;
+  // }
+
+  .stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .stat-box {
+    flex: 1;
+    background-color: #e0f7cf;
+    color: #2f2f2f;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    min-width: 220px;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+    }
+    &.pink {
+      background-color: #FFDCA9;
+      color: #3b2a2f;
+    }
+  }
+
+  .color {
+    background: #E5E0FF;
+  }
+
+
+}
+.orders-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  color: #4e4e4e;
+  direction: rtl;
+
+  ::ng-deep .p-datatable-thead > tr > th {
+    background-color: #f5f5f5;
+    color: #333;
+    font-weight: 400;
+    text-align: center;
+    font-family: "num";
+
+  }
+
+  ::ng-deep .p-datatable-tbody > tr > td {
+    text-align: center;
+    font-family: "num";
+
+  }
+
+  ::ng-deep .p-datatable tbody tr {
+    border-left: 5px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  ::ng-deep .p-datatable tbody tr:hover {
+    border-left-color: #AED581; 
+    background-color: #fdfdfd;
+  }
+}
+
+.status {
+  padding: 0.35rem 0.8rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "num";
+
+  &.در\ انتظار {
+    background-color: #ffcc80; 
+    color: #4e3600;
+  }
+
+  &.تکمیل‌شده {
+    background-color: #aed581; 
+    color: #1b5e20;
+  }
+
+  &.ارسال‌شده {
+    background-color: #81d4fa; 
+    color: #004c8c;
+  }
+
+  i {
+    font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70px;
+    padding: 1rem 0.5rem;
+    align-items: center;
+
+    .sidebar-btn {
+      width: 100%;
+      height: 48px;
+      justify-content: center;
+      padding: 0;
+
+      .p-button-icon {
+        font-size: 1.2rem;
+        margin: 0;
+      }
+
+      .p-button-label {
+        display: none !important;
+      }
+    }
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+}

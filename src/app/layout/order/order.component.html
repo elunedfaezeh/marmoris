@@ -1,0 +1,110 @@
+<p-toast position="center"></p-toast>
+<div class="container mt-5">
+    <div class="grid justify-content-center align-items-center">
+        <div class="col-12 lg:col-10">
+            <p-stepper [(activeStep)]="active" [linear]="true">
+                <p-stepperPanel>
+                    <ng-template pTemplate="header" let-onClick="onClick" let-index="index">
+                        <button class="bg-transparent border-none inline-flex flex-column gap-2"
+                            (click)="onClick.emit()">
+                            <span
+                                class="border-circle w-3rem h-3rem inline-flex align-items-center justify-content-center"
+                                [ngStyle]="{'background-color': index <= active ? '#661512' : '#edf','color':index <= active ?'#f7f6bf':'#edf'}">
+                                <i class="pi pi-user"></i>
+                            </span>
+                        </button>
+                    </ng-template>
+                    <ng-template pTemplate="content" let-nextCallback="nextCallback">
+                        <div class="text-center mt-5 mb-5 text-xl font-semibold">Create your account</div>
+                        <form [formGroup]="form">
+                            <div class="grid">
+                                <div class="col-12 lg:col-3 mb-3">
+                                    <label>mobile</label>
+                                    <input type="text" pInputText formControlName="mobile" />
+                                </div>
+                                <div class="col-12 lg:col-3 mb-3">
+                                    <label>fullname</label>
+                                    <input type="text" pInputText formControlName="fullName" />
+                                </div>
+                                <div class="col-12 lg:col-3 mb-3">
+                                    <label>phone</label>
+                                    <input type="text" pInputText pKeyFilter="num" formControlName="phone"
+                                        maxlength="11" minlength="11" />
+                                </div>
+                                <div class="col-12 lg:col-3 mb-3">
+                                    <label>email</label>
+                                    <input type="email" pKeyFilter="email" pInputText formControlName="email" />
+                                </div>
+                                <div class="col-12 lg:col-12 mb-3">
+                                    <label>address</label>
+                                    <textarea type="text" rows="4" pInputText formControlName="address"
+                                        required></textarea>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="flex pt-4 justify-content-end">
+                            <p-button (onClick)="nextCallback.emit()" label="Next" icon="pi pi-arrow-right"
+                                iconPos="right" />
+                        </div>
+                    </ng-template>
+                </p-stepperPanel>
+                <p-stepperPanel>
+                    <ng-template pTemplate="header" let-onClick="onClick" let-index="index">
+                        <button class="bg-transparent border-none inline-flex flex-column gap-2"
+                            (click)="onClick.emit()">
+                            <span
+                                class="border-circle w-3rem h-3rem inline-flex align-items-center justify-content-center"
+                                [ngStyle]="{'background-color': index <= active ? '#661512' : '#edf','color':index <= active ?'#f7f6bf':'#222'}">
+                                <i class="pi pi-shopping-cart"></i>
+                            </span>
+                        </button>
+                    </ng-template>
+                    <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback">
+                        <div class="flex flex-column gap-2 mx-auto" style="min-height: 16rem; max-width: 24rem">
+                            <div class="text-center mt-3 mb-3 text-xl font-semibold">Choose your interests</div>
+                            <div class="flex flex-wrap justify-content-center gap-3">
+                                jhh
+                            </div>
+                        </div>
+                        <div class="flex pt-4 justify-content-between">
+                            <p-button (onClick)="prevCallback.emit()" label="Back" severity="secondary"
+                                icon="pi pi-arrow-left" />
+                            <p-button (onClick)="nextCallback.emit()" label="Next" icon="pi pi-arrow-right"
+                                iconPos="right" />
+                        </div>
+                    </ng-template>
+                </p-stepperPanel>
+                <p-stepperPanel>
+                    <ng-template pTemplate="header" let-onClick="onClick" let-index="index">
+                        <button class="bg-transparent border-none inline-flex flex-column gap-2"
+                            (click)="onClick.emit()">
+                            <span
+                                class="border-circle w-3rem h-3rem inline-flex align-items-center justify-content-center"
+                                [ngStyle]="{'background-color': index <= active ? '#661512' : '#edf','color':index <= active ?'#f7f6bf':'#222'}">
+                                <i class="pi pi-check"></i>
+                            </span>
+                        </button>
+                    </ng-template>
+                    <ng-template pTemplate="content" let-prevCallback="prevCallback">
+                        <div class="flex flex-column gap-2 mx-auto" style="min-height: 16rem; max-width: 24rem">
+                            <div class="text-center mt-3 mb-3 text-xl font-semibold">Account created successfully</div>
+                            <div class="text-center">
+                                <img alt="logo" src="https://primefaces.org/cdn/primeng/images/stepper/content.svg" />
+                            </div>
+                        </div>
+                        <div class="flex pt-4 justify-content-start">
+                            <p-button (onClick)="prevCallback.emit()" label="Back" severity="secondary"
+                                icon="pi pi-arrow-left" />
+                        </div>
+                    </ng-template>
+                </p-stepperPanel>
+            </p-stepper>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <ng-persian-datepicker [uiIsVisible]="true" [uiHideOnOutsideClick]="false" [uiHideAfterSelectDate]="false">
+                <input type="text" [formControl]="dateValue" />
+            </ng-persian-datepicker> -->

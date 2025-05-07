@@ -1,0 +1,152 @@
+input,
+:host::ng-deep .p-inputtext,
+:host::ng-deep .p-dropdown,
+:host::ng-deep .p-chips,
+.p-inputtext,
+.p-dropdown,
+.p-chips,
+textarea {
+  width: 100% !important;
+  border: 1px solid #d1d5db;
+}
+
+
+label {
+  font: 12px myfont !important;
+}
+
+:host::ng-deep .p-breadcrumb {
+  margin: 20px 22px 0;
+  font-family: myfont !important;
+  border: 1px solid rgba(#555, .2);
+}
+
+:host::ng-deep .p-breadcrumb .p-icon {
+  display: none;
+}
+
+:host::ng-deep .p-breadcrumb .p-breadcrumb-list li:last-child .p-menuitem-icon {
+  margin-right: -10px;
+  margin-left: 5px;
+}
+
+:host::ng-deep .p-toast .p-toast-message .p-toast-message-content .p-toast-summary {
+  font-size: 16px;
+  font-family: myfont !important;
+  margin-right: 5px;
+}
+
+:host::ng-deep .p-toast .p-toast-message .p-toast-message-content .p-toast-detail {
+  font-size: 16px;
+  font-family: myfont !important;
+}
+
+:host::ng-deep .p-toast .p-toast-message.p-toast-message-error .p-toast-message-icon,
+.p-toast .p-toast-message.p-toast-message-error .p-toast-icon-close {
+  margin-left: 5px;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-footer {
+  text-align: left !important;
+}
+
+:host::ng-deep .p-button.p-button-icon-only {
+  margin-right: 7px;
+}
+
+:host::ng-deep .p-datatable .p-datatable-thead>tr>th {
+  font-size: 13px;
+  text-align: right;
+  font-family: myfont-bold !important;
+
+}
+
+:host::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+  font-family: myfont !important;
+  font-size: 14px;
+  padding: 10px 5px;
+  text-align: right;
+}
+
+:host::ng-deep .p-paginator .p-paginator-current {
+  font-family: myfont-num !important;
+  font-size: 14px;
+}
+
+:host::ng-deep .pi {
+  font-size: 14px;
+}
+
+:host::ng-deep .p-button.p-button-icon-only {
+  border-radius: 5px;
+  padding: 0;
+  width: 30px;
+  margin-right: 3px;
+}
+
+:host::ng-deep .p-inputtext {
+  font-size: 12px;
+}
+
+:host::ng-deep .p-dialog.p-confirm-dialog .p-confirm-dialog-message {
+  font-size: 18px;
+  color: #444;
+  font-family: myfont !important;
+  margin-right: 10px;
+}
+
+:host::ng-deep .p-dialog .p-dialog-header .p-dialog-title {
+  font-family: myfont !important;
+}
+
+:host::ng-deep .p-button .p-button-icon-left {
+  margin-left: 5px;
+}
+
+:host::ng-deep .p-dialog .p-dialog-footer {
+  text-align: left;
+}
+
+:host::ng-deep .p-dialog .p-dialog-header .p-dialog-header-icon:last-child {
+  display: none;
+}
+
+:host::ng-deep .p-dialog {
+  width: 35%;
+}
+
+@media screen and (max-width: 991px) {
+  :host::ng-deep .p-button .p-button-label {
+    font-family: myfont-bold !important;
+    font-size: 12px;
+  }
+  :host::ng-deep .p-button {
+    margin-bottom: 3px;
+  }
+}
+
+:host::ng-deep .p-button {
+  background-color: var(--color1);
+  border-color: var(--color1);
+  border-radius: 5px;
+  margin-right: 3px;
+}
+
+:host::ng-deep .p-button:hover {
+  background-color: var(--color1);
+  border-color: var(--color1);
+}
+
+:host::ng-deep .p-button .p-button-label {
+  font-family: myfont-bold !important;
+  font-size: 16px;
+}
+
+:host::ng-deep .p-inputtext {
+  font-family: myfont !important;
+  font-size: 14px;
+}
+
+.card {
+  padding: 25px;
+}

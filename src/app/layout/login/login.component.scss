@@ -1,0 +1,100 @@
+
+.card {
+  border-radius: 10px;
+  margin: 65px 20px;
+}
+.logo{
+  font-family: 'logo';
+  font-size: 20px;
+  color:#617f34;
+}
+input {
+  font-size: 14px;
+  height: 50px;
+  border-radius: 5px;
+  font-family: "num";
+  border: 1px solid #d1d5db;
+}
+
+.verify {
+  padding: 0 20px;
+  font-family: "num";
+  font-size: 14px;
+}
+
+input,
+:host::ng-deep .p-inputtext .p-inputtext {
+  width: 100% !important;
+}
+
+
+
+
+
+:host::ng-deep .p-float-label label {
+  margin-bottom: 20px;
+
+  right: 0;
+  left: auto;
+  text-align: right;
+  font-family: "num";
+}
+
+.input-container {
+  padding: 50px 70px;
+}
+
+:host::ng-deep .p-message .p-message-detail {
+  font-size: 14px;
+  font-family: "num";
+}
+
+:host::ng-deep .p-toast .p-toast-message .p-toast-message-content .p-toast-summary {
+  font-size: 14px;
+  font-family: "num";
+  margin-right: 10px;
+}
+
+:host::ng-deep .p-button {
+  border-radius: 5px;
+  color: #555;
+}
+
+:host::ng-deep .p-button.btn {
+  background-color: #617f34;
+  // border-color: var(--color1);
+  color: #fff;
+  padding: 10px;
+  margin-top: 10px;
+}
+:host::ng-deep .p-button .p-button-label {
+  font-family: "num";
+  font-size: 16px;
+  font-weight: normal;
+}
+
+
+p a {
+  color: var(--color1);
+  cursor: pointer;
+}
+
+h5 {
+  font-family: "num";
+}
+
+p {
+  font-size: 14px;
+  font-family: "num";
+}
+
+
+@media (max-width: 991px) {
+  .card {
+    margin: 5px 20px !important;
+  }
+
+  .input-container {
+    padding: 40px;
+  }
+}

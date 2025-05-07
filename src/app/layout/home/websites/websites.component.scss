@@ -1,0 +1,31 @@
+.card {
+ padding: 10px;
+    position: relative;
+    cursor: pointer;
+}
+h1{
+    margin-bottom: 45px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+.card_image {
+    height: 250px;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 10px;
+
+}
+
+.card_image img {
+    object-fit: cover;
+    overflow: hidden;
+    transition: transform 1s ease-in-out;
+    width: 100%;
+}
+
+.card_image:hover img {
+    transform: translateY(calc(-100% + 250px));
+    transition: transform 7s ease-in-out;
+}

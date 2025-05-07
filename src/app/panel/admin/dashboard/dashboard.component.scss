@@ -1,0 +1,68 @@
+:host::ng-deep .p-breadcrumb {
+  margin: 20px 15px 0;
+  font-family: farsi !important;
+  border: 1px solid rgba(#555, .2);
+}
+
+:host::ng-deep .p-breadcrumb .p-icon {
+  display: none;
+}
+
+:host::ng-deep .p-breadcrumb .p-breadcrumb-list li:last-child .p-menuitem-icon {
+  margin-right: -10px;
+  margin-left: 5px;
+}
+
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+  padding: 20px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 15px;
+}
+
+.card i {
+  margin-left: 10px;
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.card span {
+  font-family: farsi !important;
+  font-size: 14px;
+  color: #000;
+}
+h5{
+  font-size: 14px;
+}
+@media (max-width: 991px) {
+  .card {
+    flex: 0 1 calc(50% - 5px);
+  }
+
+  .card span {
+    font-size: 13px;
+  }
+
+}
+
+@media (max-width:680px) {
+  .card {
+    flex: 0 1 calc(100% - 5px);
+  }
+}

@@ -1,0 +1,23 @@
+<p-toast position="center"></p-toast>
+
+<section class="container mt-5 lg:p-5">
+  <div class="grid shadow-3 mt-5">
+    <div class="col-12 md:col-6 lg:col-6 p-5 text-center">
+      <h1 class="mb-4">فرم ورود پنل مدیریت</h1>
+      <form [formGroup]="form" (ngSubmit)="login()" class="p-5">
+        <span class="p-float-label mb-4">
+          <input type="text" pInputText formControlName="userName" required>
+          <label>نام کاربری</label>
+        </span>
+        <span class="p-float-label">
+          <input type="password" pInputText formControlName="password" required>
+          <label>رمزعبور</label>
+        </span>
+        <button type="submit" pButton pRipple label="ورود" class="w-full"></button>
+      </form>
+    </div>
+    <div class="col-12 md:col-6 lg:col-6 bg text-center align-content-center">
+    <h2>hippo</h2>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,79 @@
+.banner {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  margin-top: 140px;
+}
+
+.banner .slider {
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  top: 10%;
+  left: calc(50% - 100px);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: autoRun 20s linear infinite;
+  z-index: 1;
+}
+
+@keyframes autoRun {
+  from {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+  }
+
+  to {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+  }
+}
+
+.banner .slider .item {
+  position: absolute;
+  inset: 0 0 0 0;
+  transform:
+    rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(550px);
+}
+
+.banner .slider .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.banner .content {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-20%);
+  width: min(1400px, 100vw);
+  height: max-content;
+  padding-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 0;
+}
+
+.banner .content h1 {
+  color: #a80000;
+  // background:linear-gradient(#661512,#aa0f83);
+  // padding: 5px;
+  // border-radius: 10px;
+  font-size: 5em;
+  background: linear-gradient(to right, #47141b, #d3203b);
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+  .banner .content h1 {
+    font-size: 7em;
+    transform: translateX(-30%);
+  }
+}

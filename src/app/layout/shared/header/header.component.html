@@ -1,0 +1,57 @@
+<div class="header-pc container-fluid px-5">
+  <p-toolbar>
+    <div class="p-toolbar-group-start">
+      <h3 class="name">marmoris</h3>
+    </div>
+    <div class="p-toolbar-group-center">
+      <p-menubar [model]="items" />
+
+    </div>
+    <div class="p-toolbar-group-end ">
+      <p-button *ngIf="!currentUser" label="ورود / عضویت" icon="pi pi-sign-in" [outlined]="true"
+      (click)="showLoginPage()"></p-button>
+    
+    <p-button *ngIf="currentUser" label="پنل کاربری" icon="pi pi-user" [outlined]="true"
+      routerLink="/profile"></p-button>
+ 
+      <i class="pi pi-shopping-bag" pBadge  [value]="cartService.getCount().toString()" style="cursor: pointer;" routerLink="/cart">
+      </i>
+    </div>
+  </p-toolbar>
+</div>
+<header class="header-mobile py-5 px-4">
+  <div class="d-flex align-items-center justify-content-between position-relative">
+    <div class="rounded-icon" (click)="showMenu()">
+      <i class="pi pi-bars"></i>
+    </div>
+
+    <h3 class="namemobile position-absolute start-50 translate-middle-x">marmoris</h3>
+
+    <div class="d-flex align-items-center gap-2">
+      <ng-container *ngIf="currentUser; else loginIcon">
+        <div class="rounded-icon">
+          <i class="pi pi-user" title="پنل کاربری" routerLink="/profile"></i>
+        </div>
+      </ng-container>
+      <ng-template #loginIcon>
+        <div class="rounded-icon">
+          <i class="pi pi-sign-in" title="ورود" routerLink="/login"></i>
+        </div>
+      </ng-template>
+      <div class="rounded-icon">
+        <i class="pi pi-shopping-bag" pBadge [value]="cartService.getCount().toString()" title="سبد خرید" routerLink="/cart"></i>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+
+<p-sidebar [(visible)]="display" [style]="{'width':'280px'}" position="right" [showCloseIcon]="true">
+  <div class="d-flex flex-column">
+    <div class="mb-auto">
+      <p-panelMenu [model]="items" [style]="{ width: '100%' }"></p-panelMenu>
+    </div>
+  </div>
+</p-sidebar>

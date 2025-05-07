@@ -1,0 +1,46 @@
+<p-breadcrumb [model]="[{icon:'pi pi-chevron-left',label: 'داشبرد'}]"
+    [home]="{ icon: 'pi pi-home', routerLink: '/admin' }"></p-breadcrumb>
+
+<div class="px-3 py-4 md:px-6 lg:px-3">
+
+    <div class="box wow fadeInUp">
+        <div class="card" routerLink="/admin/user">
+            <i class="pi pi-comments text-blue-500 bg-blue-100"></i>
+            <span>مدیریت نظرات</span>
+        </div>
+        <div class="card" routerLink="/admin/faq">
+            <i class="pi pi-question-circle text-cyan-500 bg-cyan-100"></i>
+            <span>سوالات متداول</span>
+        </div>
+        <div class="card" routerLink="/profile/order">
+            <i class="pi pi-list text-orange-500 bg-orange-100"></i>
+            <span>مدیریت محصولات</span>
+        </div>
+        <div class="card">
+            <i class="pi pi-shopping-cart bg-purple-100 text-purple-500"></i>
+            <span>مدیریت سفارشات</span>
+        </div>
+    </div>
+
+    <div class="grid mt-1">
+        <div class="col-12 md:col-6 lg:col-4 xl:col-4">
+            <div class="card cursor-pointer shadow-1">
+                <h5>تعداد کاربران</h5>
+                <p-chart type="bar" [data]="chartData"></p-chart>
+            </div>
+        </div>
+        <div class="col-12 md:col-6 lg:col-4 xl:col-4">
+            <div class="card cursor-pointer shadow-1">
+                <h5>تعداد پیام ها</h5>
+                <p-chart type="line" [data]="chartData"></p-chart>
+            </div>
+        </div>
+        <div class="col-12 md:col-6 lg:col-4 xl:col-4">
+            <div class="card cursor-pointer shadow-1">
+                <h5>تعداد پیام ها</h5>
+                <p-chart type="bar" [data]="chartData"></p-chart>
+            </div>
+        </div>
+
+    </div>
+</div>

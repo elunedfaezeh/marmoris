@@ -1,0 +1,36 @@
+<p-toast position="center"></p-toast>
+
+<section class="container mt-5">
+    <div class="grid">
+        <div class="col-12 md:col-12 lg:col-12">
+            <div class="grid">
+                <div class="col-12 md:col-12 lg:col-12 mb-2">
+                    <p-dataView #dv [value]="products" filterBy="title,price,cat">
+                        <p-header>
+                            <span class="p-input-icon-right w-100 mt-3">
+                                <i class="pi pi-search"></i>
+                                <input pInputText type="text" (input)="dv.filter($any($event.target).value, 'contains')"
+                                    placeholder="product search" />
+                            </span>
+                        </p-header>
+                        <ng-template pTemplate="list" let-products>
+                            <div class="grid mt-5">
+                                <div class="col-6 lg:col-3" [ngClass]="{ 'col-3': products.length%2!=0,}"
+                                    *ngFor="let item of products ;">
+                                    <div class="card mb-2" [routerLink]="['/product', item._id]">
+                                        <img [src]="item.image" [alt]="item.title" class="img-fluid" />
+                                        <div class="flex flex-row justify-content-between mt-4">
+                                            <h2>{{item.title }}</h2>
+                                            <i class="pi pi-plus-circle"></i>
+                                        </div>
+                                        <h3>${{item.price |number}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </p-dataView>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

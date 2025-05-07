@@ -1,0 +1,89 @@
+:host::ng-deep .p-toast .p-toast-message .p-toast-message-content .p-toast-summary {
+  font-size: 16px;
+  font-family: farsi !important;
+  margin-right: 5px;
+}
+
+:host::ng-deep .p-toast .p-toast-message .p-toast-message-content .p-toast-detail {
+  font-size: 16px;
+  font-family: farsi !important;
+}
+
+:host::ng-deep .p-toast .p-toast-message.p-toast-message-error .p-toast-message-icon,
+.p-toast .p-toast-message.p-toast-message-error .p-toast-icon-close {
+  margin-left: 5px;
+}
+
+:host::ng-deep .p-inputtext {
+  width: 100% !important;
+}
+
+img {
+  max-width: 250px;
+  filter: brightness(0) invert(1);
+}
+
+.grid {
+  border-radius: 10px;
+  margin: 10% 5%;
+}
+
+.bg {
+  background: var(--color1);
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+input {
+  font-size: 14px;
+  height: 45px;
+  border-radius: 5px;
+  font-family:farsi!important;
+  border: 1px solid #d1d5db;
+}
+
+label {
+  right: 20px;
+  left: unset;
+  font-family: farsi !important;
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: farsi !important;
+}
+h2{
+  font-family: logo;
+  color: #d1d5db;
+  font-size: 100px;
+}
+:host::ng-deep .p-button {
+  background: var(--color1);
+  border-color: var(--color1);
+  border-radius: 5px;
+  margin-top: 30px;
+  padding: 10px 20%;
+}
+
+
+:host::ng-deep .p-button .p-button-label {
+  font-family: farsi !important;
+  font-size: 16px;
+}
+
+
+@media (max-width: 991px) {
+  img {
+    max-width: 100px;
+  }
+
+  .grid {
+    margin: 5% 5px;
+  }
+
+  .bg {
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0;
+  }
+}

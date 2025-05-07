@@ -1,0 +1,115 @@
+.butt {
+  border-bottom: #3498db 1px solid;
+  margin: 40px;
+}
+
+.main {
+  border-radius: 20px;
+  background-color: rgb(242, 192, 175);
+}
+
+.my-button {
+  font-size: 12px;
+  font-family: 'num';
+  border-radius: 30px;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.my-button-active {
+  border-radius: 30px;
+  border: 1px solid #EEF1DA;
+  background-color: rgb(138, 172, 104);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.my-button-inactive {
+  border-radius: 30px;
+
+  background-color: #EEF1DA;
+  color: #333;
+  border: 1px solid #EEF1DA;
+}
+
+.my-button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+:host::ng-deep .p-breadcrumb {
+  font-family: 'num';
+  // font-weight: bold;
+  font-size: 14px;
+  border: none;
+  background-color: transparent;
+
+}
+
+:host::ng-deep .p-breadcrumb .p-icon {
+  display: none;
+}
+
+:host::ng-deep .p-breadcrumb .p-breadcrumb-list li:last-child .p-menuitem-icon {
+  margin-right: -10px;
+}
+
+.image-container {
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.product-image {
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.product-image:hover {
+  transform: scale(1.07) rotate(-2deg);
+}
+
+.title {
+  font-size: 18px;
+  font-family: 'num';
+  border-bottom: 2px solid #cf748b;
+
+}
+
+.maincard {
+  background: #672121;
+}
+
+.custom-card-bg {
+  background-color: #fafced;
+  border-radius: 20px;
+}
+
+.imgproduct {
+  border-radius: 20px;
+
+}
+
+p {
+  font-size: 12px;
+  font-family: 'num';
+  color: gray;
+
+}
+
+h4 {
+  font-size: 15px;
+  font-family: 'num';
+}
+
+.available {
+  display: inline-block;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 12px;
+  font-family: 'num';
+}

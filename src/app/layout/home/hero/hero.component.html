@@ -1,0 +1,12 @@
+<section id="hero">
+  <div class="parent-container">
+    <div class="card border-round-2xl ">
+      <p-galleria [value]="items" autoPlay="true" [numVisible]="5" [circular]="true" [showItemNavigators]="true" [showThumbnails]="false" [responsiveOptions]="responsiveOptions">
+        <ng-template let-item pTemplate="item">
+          <img [src]="item.url" class="border-round-2xl" style="width: 100%; display: block;" />
+        </ng-template>
+      </p-galleria>
+    </div>
+  </div>
+  
+</section>

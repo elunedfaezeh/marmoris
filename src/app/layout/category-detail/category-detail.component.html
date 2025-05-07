@@ -1,0 +1,67 @@
+
+<div class="flex flex-wrap md:justify-content-center justify-content-center">
+    <div class="title w-12rem h-3rem flex align-items-center justify-content-center">{{ category }}</div>
+</div>
+
+<div class="container-fluid py-4">
+    <div class="grid justify-content-center">
+        <div class="col-12">
+            <div class="container-fluid">
+                <div class="grid justify-content-center">
+                    <div class="col-12">
+                        <div class="flex justify-content-center mb-5">
+                            <div class="main flex gap-2 px-5 py-4 shadow-2">
+
+                                <button pButton type="button" label="جدیدترین" class="btitle my-button"
+                                    [ngClass]="activeFilter === 'newest' ? 'my-button-active' : 'my-button-inactive'"
+                                    (click)="applyFilter('newest')">
+                                </button>
+
+                                <button pButton type="button" label="پرفروش‌ها" class="btitle my-button"
+                                    [ngClass]="activeFilter === 'bestseller' ? 'my-button-active' : 'my-button-inactive'"
+                                    (click)="applyFilter('bestseller')">
+                                </button>
+
+                                <button pButton type="button" label="فقط موجودها" class="btitle my-button"
+                                    [ngClass]="activeFilter === 'available' ? 'my-button-active' : 'my-button-inactive'"
+                                    (click)="applyFilter('available')">
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="grid">
+                            <div (click)="showProductDetails(product)" *ngFor="let product of filteredProducts.slice(first, first + rows)"
+                              class="col-6 sm:col-6 md:col-4 lg:col-3 p-2">
+                              <div class="custom-card-bg shadow-2 p-3 h-full flex flex-column justify-content-between transition-duration-300 hover:shadow-4">
+                          
+                                <div class="maincard mb-3 overflow-hidden imgproduct relative border-round">
+                                  <img 
+                                    [src]="product.imageUrl" 
+                                    [alt]="product.name"
+                                    class="w-full transition-transform transition-duration-300 border-round"
+                                   
+                                    style="object-fit: cover; max-height: 220px;"
+                                    onmouseover="this.style.transform='scale(1.05)'" 
+                                    onmouseout="this.style.transform='scale(1)'" />
+                          
+                                  <span *ngIf="!product.available" 
+                                        class="available absolute top-0 right-0 m-2 px-3 py-1 rounded-xl z-5">
+                                    ناموجود
+                                  </span>
+                                </div>
+                          
+                                <div class="text-center">
+                                  <h4 class="mb-2 ">{{ product.name }}</h4>
+                                  <p *ngIf="product.price" class="mb-2">{{ product.price | number }} تومان</p>
+                                </div>
+                          
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

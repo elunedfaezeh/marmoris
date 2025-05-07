@@ -1,0 +1,47 @@
+<div class="">
+    <div class="card p-3">
+        <p-table #dt [value]="orders" responsiveLayout="stack" dataKey="_id" [rows]="5" [showCurrentPageReport]="true"
+            [paginator]="true" currentPageReportTemplate="{first} تا {last} از {totalRecords}" [filterDelay]="0"
+            [globalFilterFields]="['refID', 'code']">
+            <ng-template pTemplate="caption">
+                لیست سفارش ها
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>کد سفارش</th>
+                    <th>تاریخ سفارش</th>
+                    <th>وضعیت سفارش</th>
+                    <th>وضعیت پرداخت</th>
+                    <th>مبلغ پرداختی تومان</th>
+                    <th></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowIndex="rowIndex" let-item>
+                <tr>
+                    <td>
+                        {{item.code}}
+                    </td>
+                    <td>
+                        {{item.date}}
+                    </td>
+                    <td>
+                        {{item.orderStatus}}
+                    </td>
+                    <td class="success" *ngIf="item.payStatus=='true'">
+                        موفق
+                    </td>
+                    <td class="err" *ngIf="item.payStatus=='false'">
+                        ناموفق
+                    </td>
+                    <td>
+                        {{item.totalAmount/10 |number}}
+                    </td>
+                    <td>
+                        <button pButton pRipple icon="pi pi-chevron-left" iconPos="right" label="جزییات سفارش"
+                            (click)="showDetail(item._id)"></button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

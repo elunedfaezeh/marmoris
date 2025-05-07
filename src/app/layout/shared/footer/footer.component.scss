@@ -1,0 +1,76 @@
+.footer {
+  border-top: 1px solid #cbd7ba;
+  background-color: transparent;
+  padding: 2rem 0 0;
+  color: #777;
+}
+
+.footer .logo {
+  font-family: 'logo';
+  font-size: 2.5rem;
+  color: #617f34;
+  font-weight: 900;
+  text-align: center;
+  opacity: .9;
+}
+
+.footer .nav-links li {
+  display: inline-block;
+}
+
+.footer .nav-links li a {
+  color: #777;
+  padding: 10px;
+}
+
+.footer .nav-links li a:hover {
+  color: #617f34;
+}
+
+.footer .message .form-group {
+  margin-bottom: 0;
+  position: relative;
+}
+
+.footer .message .form-group input[type="text"] {
+  height: 45px;
+  border: none;
+  background: #d5c5b8;
+}
+
+.footer .message .form-group i {
+  cursor: pointer;
+  justify-content: center;
+  color: #ffffff;
+  position: absolute;
+  border: none;
+  font-size: 1.2rem;
+  top: 1.5rem;
+  right: .6rem;
+  line-height: 0;
+}
+
+.footer .social li {
+  display: inline-block;
+}
+
+.footer .social li a {
+  display: inline-block;
+  color: #5a5454;
+}
+
+.footer .social li a:hover {
+  color: #617f34;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+p {
+  font-size: 10px;
+}
+.social{
+  font-family: 'num';
+  font-size: 10px;
+}

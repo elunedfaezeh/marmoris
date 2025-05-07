@@ -1,0 +1,82 @@
+.grid {
+    direction: ltr;
+
+}
+
+.card {
+    margin: 5px;
+    padding: 20px 20px 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+h1{
+    margin-bottom: 45px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+h3 {
+    color: #777;
+    font-size: 14px;
+}
+
+p {
+    font-size: 12px;
+    text-align: justify;
+}
+
+img {
+  width: 80px;
+  height: 80px;
+    border-radius: 50%;
+}
+
+
+:host::ng-deep .p-rating {
+    gap: 1px;
+}
+:host::ng-deep .p-rating .p-rating-item .p-rating-icon {
+    color: orange;
+    width: 12px;
+}
+:host::ng-deep .p-rating .p-rating-item.p-rating-item-active .p-rating-icon {
+    color: orange;
+    width: 12px;
+}
+
+:host::ng-deep .p-rating-icon:hover {
+    color: orange;
+}
+
+:host::ng-deep .p-rating .p-rating-item .p-rating-icon {
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 991px) {
+    p {
+        font-size: 11px;
+    }
+
+    :host::ng-deep .p-rating .p-rating-item.p-rating-item-active .p-rating-icon {
+        width: 10px;
+    }
+
+    h2 {
+        font-size: 12px;
+    }
+
+    h3 {
+        font-size: 12px;
+    }
+
+}

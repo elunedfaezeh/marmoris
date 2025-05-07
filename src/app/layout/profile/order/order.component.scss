@@ -1,0 +1,90 @@
+:host::ng-deep .p-datatable .p-datatable-header {
+    font-size: 14px;
+    text-align: right;
+    font-family: num !important;
+}
+
+:host::ng-deep .p-datatable .p-datatable-thead>tr>th {
+    font-size: 13px;
+    text-align: right;
+    font-family: num !important;
+}
+
+:host::ng-deep .p-datatable .p-datatable-thead>tr {
+    border-bottom: 1px solid #d7d9db;
+}
+
+:host::ng-deep .p-datatable .p-datatable-tbody>tr {
+    border-bottom: 1px solid #d7d9db;
+}
+
+:host::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+    font-family: num !important;
+    font-size: 14px;
+    text-align: right;
+    padding: 10px 15px;
+}
+
+:host::ng-deep .p-datatable-tfoot>tr {
+    border-bottom: 1px solid #d7d9db;
+}
+
+
+:host::ng-deep .p-paginator .p-paginator-current {
+    font-family: num !important;
+    font-size: 14px;
+}
+
+:host::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
+    font-family: num !important;
+}
+
+img {
+    border-radius: 5px;
+}
+
+:host::ng-deep .p-button.p-button-icon-only {
+    border-radius: 5px;
+    padding: 2px;
+    width: 30px;
+    background-color: transparent;
+    border: none;
+    color: #555;
+    margin-right: 7px;
+}
+
+:host::ng-deep .p-button.p-button-icon-only:hover {
+    background-color: rgba(#aa8b77, .2);
+}
+
+.success {
+    color: green;
+}
+
+.err {
+    color: red;
+}
+
+
+:host::ng-deep .p-button {
+    border-color: #ddd;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 8px 15px;
+    color: #222;
+}
+
+:host::ng-deep .p-button .p-button-icon-right {
+    margin-right: 5px;
+    font-size: 16px;
+    color: #444;
+}
+
+:host::ng-deep .p-button .p-button-label {
+    font-family: num !important;
+    font-size: 12px;
+}
+
+.card {
+    border-radius: 15px;
+}

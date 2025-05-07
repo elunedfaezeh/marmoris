@@ -1,0 +1,96 @@
+h1 {
+    font-size: 50px;
+    text-align: center;
+    color: var(--color-font2);
+    font-weight: bold;
+    padding: 0 20%;
+    line-height: 65px;
+}
+.title {
+    font-family: 'num';
+    font-size: 13px;
+    color: #fff;
+    justify-content: center;
+    padding: 70px; 
+    background-image: url('/assets/images/2.png');
+    background-size: cover; 
+    background-position: center;
+  }
+  .main-title{
+    font-size: 15px;
+    color: #fff;
+  }
+.faq {
+    padding: 40px 40px;
+    direction: rtl;
+}
+
+img {
+    border-radius: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 30px;
+    text-align: justify;
+}
+
+:host::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon {
+    background-color: #cf748b;
+    color: #fcf3cc;
+    padding: 4px;
+    margin: 10px;
+    border-radius: 20px;
+    right: 0;
+    display: flex;
+    font-size: 12px;
+}
+
+:host::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #585656;
+    border-radius: 0;
+    padding: 10px;
+    font-family: 'num';
+
+
+}
+
+:host::ng-deep .p-accordion-content {
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    font-family: 'num';
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+}
+
+@media (max-width: 991px) {
+    img{
+        display: none;
+    }
+
+    :host::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link {
+        font-size: 12px;
+    }
+
+    :host::ng-deep .p-accordion-content {
+        font-size: 12px;
+    }
+
+    .faq {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+        padding: 0 10%;
+        line-height: 45px;
+    }
+
+
+}

@@ -1,0 +1,125 @@
+<p-toast position="center"></p-toast>
+<div style="direction: rtl; text-align: right">
+    <form [formGroup]="form" (ngSubmit)="submitForm()" class="mt-4">
+        <div class="row">
+            <div class="col-lg-6 col-sm-12 mb-3">
+                <span class="p-float-label mb-4">
+                    <input formControlName="title" pInputText />
+                    <label>عنوان</label>
+                </span>
+            </div>
+            <div class="col-lg-6 col-sm-12 mb-3">
+                <span class="p-float-label mb-4">
+                    <input formControlName="price" pInputText />
+                    <label>قیمت</label>
+                </span>
+            </div>
+            <div class="col-lg-12 col-sm-12 mb-3">
+                <span class="p-float-label mb-4">
+                    <textarea type="text" rows="5" pInputText formControlName="description" required></textarea>
+                    <label>توضیحات</label>
+                </span>
+            </div>
+
+            <div class="col-lg-12 mb-3">
+                <label class="label">تصویر اصلی</label>
+                <p-fileUpload chooseLabel="انتخاب" uploadLabel="آپلود" cancelLabel="انصراف" [customUpload]="true"
+                    (uploadHandler)="onFileUpload($event)"
+                    invalidFileSizeMessageDetail="حداکثر سایز فایل 2 مگابایت می باشد"
+                    invalidFileSizeMessageSummary="اندازه فایل بیش از حد مجاز می باشد" accept="image/jpeg,image/png"
+                    [maxFileSize]="2000000">
+                </p-fileUpload>
+            </div>
+
+            <div class="col-lg-12 mb-3">
+                <label class="label">تصاویر گالری</label>
+                <p-fileUpload chooseLabel="انتخاب تصاویر" uploadLabel="آپلود" cancelLabel="انصراف" [customUpload]="true"
+                    (uploadHandler)="onMultipleUpload($event)"
+                    multiple="true"
+                    invalidFileSizeMessageDetail="حداکثر سایز فایل 2 مگابایت می باشد"
+                    invalidFileSizeMessageSummary="اندازه فایل بیش از حد مجاز می باشد" accept="image/jpeg,image/png"
+                    [maxFileSize]="2000000">
+                </p-fileUpload>
+            </div>
+
+    
+            <div class="col-lg-12 col-sm-12 mt-3">
+                <label class="label mb-5">ویژگی های محصول</label>
+                <form [formGroup]="myFeature">
+                    <div class="grid">
+                        <div class="col-12 md:col-4 lg:col-4 mb-4">
+                            <p-floatLabel>
+                                <input type="text" pInputText formControlName="feature" />
+                                <label>ویژگی</label>
+                            </p-floatLabel>
+                        </div>
+                        <div class="col-12 md:col-4 lg:col-4 mb-4">
+                            <p-floatLabel>
+                                <input pKeyFilter="int" type="text" pInputText formControlName="value" />
+                                <label>مقدار</label>
+                            </p-floatLabel>
+                        </div>
+                        <div class="col-12 md:col-4 lg:col-4 mb-4">
+                            <button pButton type="button" (click)="addFeature()" icon="pi pi-plus"></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-12 md:col-12 lg:col-12 mb-4" *ngIf="features.length>0">
+                <p-table [value]="features">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th style="width:25%">ویژگی</th>
+                            <th style="width:25%">مقدار</th>
+                            <th style="width:2%"></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-item let-rowIndex="rowIndex">
+                        <tr>
+                            <td>{{item.feature}}</td>
+                            <td>{{item.value}}</td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-data let-editing="editing" let-ri="rowIndex">
+                        <tr>
+                            <td [pEditableColumn]="data.feature" pEditableColumnField="feature"
+                                [pEditableColumnRowIndex]="ri">
+                                <p-cellEditor>
+                                    <ng-template pTemplate="input" [formGroup]="myGroup">
+                                        <input pInputText type="text" formControlName="cell" [(ngModel)]="data.feature"
+                                            required>
+                                    </ng-template>
+                                    <ng-template pTemplate="output">
+                                        {{data.feature}}
+                                    </ng-template>
+                                </p-cellEditor>
+                            </td>
+                            <td [pEditableColumn]="data.value" pEditableColumnField="value"
+                                [pEditableColumnRowIndex]="ri">
+                                <p-cellEditor>
+                                    <ng-template pTemplate="input" [formGroup]="myGroup">
+                                        <input pInputText type="text" formControlName="cell" [(ngModel)]="data.value"
+                                            required>
+                                    </ng-template>
+                                    <ng-template pTemplate="output">
+                                        {{data.value}}
+                                    </ng-template>
+                                </p-cellEditor>
+                            </td>
+
+                            <td>
+                                <button pButton type="button" (click)="delFeature(ri)" icon="pi pi-times"></button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+            <div class="row text-center mt-4">
+                <div class="col-lg-12">
+                    <button type="submit" pButton label="ثبت" [disabled]="!form.valid"></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

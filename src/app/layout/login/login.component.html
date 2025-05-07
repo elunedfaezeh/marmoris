@@ -1,0 +1,36 @@
+<p-toast position="center"></p-toast>
+
+<section class="container">
+  <div class="grid justify-content-center align-items-center mt-5">
+    <div class="col-12 md:col-6 lg:col-6">
+      <div class="card ">
+        <h3 class="text-center py-4 logo">
+          marmoris
+        </h3>
+        <form [formGroup]="form" (ngSubmit)="sendSMS()">
+          <div class="input-container">
+            <span class="p-float-label">
+              <input type="text" pInputText pKeyFilter="num" formControlName="mobile" maxlength="11" minlength="11" required>
+              <label class="px-2">شماره موبایل</label>
+            </span>
+            <button type="submit" pButton pRipple label="ورود" class="w-full btn"></button>
+            <!-- <p class="mt-4">با ورود به هیپو، <a>شرایط و قوانین</a> را می‌پذیرم.</p> -->
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p-dialog [(visible)]="display">
+  <div class="flex flex-column align-items-center justify-content-center px-3">
+    <p class="mb-4">کد تایید به شماره موبایل شما ارسال شد.</p>
+    <p-inputOtp [(ngModel)]="value" autofocus="true" [integerOnly]="true" [length]="4" dir="ltr"
+      (onChange)="onVerifyCode($event)" />
+    <div class="flex justify-content-between mt-3 align-self-stretch">
+      <h5 class="mt-3">۰۰:{{ timer }}</h5>
+      <p-button label="ارسال مجدد" [link]="true" (click)="sendSMS()" [disabled]="!resendSMS" class="p-0" />
+    </div>
+    <p class="text-danger" *ngIf="invalidSMS">کد وارد شده اشتباه است.</p>
+  </div>
+</p-dialog>

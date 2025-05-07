@@ -1,0 +1,30 @@
+<section id="faqs">
+
+<div class="flex justify-content-center flex-wrap">
+    <div
+    class="title flex align-items-center font-weight: 600; justify-content-center ">
+    <h3  class="main-title pt-5">سوالات متداول</h3>
+</div>
+</div>
+<section id="faq" class="container-fluid ">
+    <div class="container py-3">
+        <div class="grid align-items-center justify-content-center ">
+            <div class="col-12 lg:col-6">
+                <div class="faq ">
+                    <p-accordion iconPos="start" collapseIcon="pi pi-angle-down" expandIcon="pi pi-angle-left">
+                        <p-accordionTab *ngFor="let item of faqs">
+                            <ng-template pTemplate="header">
+                                {{item.question}}
+                            </ng-template>
+                            <p>{{item.reply}}</p>
+                        </p-accordionTab>
+                    </p-accordion>
+                </div>
+            </div>
+            <div class="col-12 lg:col-6 flex-order-0">
+               <img class="img-fluid" src="/assets/images/f2.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+</section>

@@ -1,0 +1,29 @@
+<section class="container my-5">
+    <div class="grid align-items-center justify-content-center">
+        <div class="col-12 lg:col-5">
+            <div class="text">
+                <h1>developing app by NDMK</h1>
+                <p>
+                    Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web
+                    development to fill empty spaces in a layout that does not yet have content.
+                </p>
+            </div>
+        </div>
+        <div class="col-12 lg:col-7">
+            <div class="grid">
+                <div class="col-10">
+                    <div class="h-full">
+                        <img [src]="url" alt="hippo" class="img-fluid img" />
+                    </div>
+                </div>
+                <div class="col-2 h-full">
+                    <div class="flex flex-column">
+                        <div *ngFor="let item of images">
+                            <img [src]="item.url" (click)="onChange(item.url)" alt="hippo" class="img-fluid img_btn" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

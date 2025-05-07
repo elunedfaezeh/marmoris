@@ -1,0 +1,29 @@
+<p-toolbar>
+  <div class="p-toolbar-group-start">
+    <p-button icon="pi pi-bars" (click)="drawer.toggle()" [text]="true"></p-button>
+    <span class="example-app-name">Admin Panel</span>
+  </div>
+  <div class="p-toolbar-group-center">
+    <!-- <input pInputText placeholder="جستجو" /> -->
+  </div>
+  <div class="p-toolbar-group-end">
+    <p-button icon="pi pi-sign-out" pTooltip="exit" (click)="logOut()" [text]="true"></p-button>
+    <p-button icon="pi pi-ellipsis-v" [text]="true"></p-button>
+  </div>
+</p-toolbar>
+<mat-drawer-container dir="rtl">
+  <mat-drawer #drawer 
+  [opened]="screenWidth > 840" [mode]="(screenWidth > 840) ? 'side' : 'over'">
+    <div class="text-center">
+      <p-avatar *ngIf="image==undefined" icon="pi pi-user" size="xlarge" styleClass="mt-4"
+        [style]="{'background-color': '#eff3f8','color':'#e2e2e2'}" shape="circle"></p-avatar>
+      <p-avatar *ngIf="image!=undefined" [image]="image" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
+      <h6 class="mt-2">{{fullName}}</h6>
+    </div>
+    <p-panelMenu [model]="items"></p-panelMenu>
+  </mat-drawer>
+  <mat-drawer-content>
+    <ng-content></ng-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

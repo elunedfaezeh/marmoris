@@ -1,0 +1,32 @@
+.parent-container {
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+}
+
+.card {
+  max-width: 1050px;     
+  width: 100%;   
+  margin: 20px; 
+  padding: 10px; 
+  border: 8px solid #cf748b; 
+  border-radius: 8px; 
+  background-color: #cf748b;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+:host::ng-deep .p-galleria .p-galleria-item-nav .p-icon-wrapper .p-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+
+@media (max-width: 991px) {
+  :host::ng-deep .p-galleria .p-galleria-item-nav .p-icon-wrapper .p-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  
+
+
+}

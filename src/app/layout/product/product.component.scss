@@ -1,0 +1,229 @@
+.title {
+    font-family: 'num';
+    font-size: 20px;
+}
+
+:host::ng-deep .p-galleria-thumbnail-container {
+    display: flex;
+    flex-direction: row;
+    border-bottom-left-radius:50px ;
+    border-bottom-right-radius:50px ;
+    margin-top: -30px;
+    position: relative;
+    padding: 40px 30px;
+    background: #de9f92;
+
+}
+
+.main {
+    direction: ltr;
+}
+span{
+    font-family: 'num';
+
+}
+
+
+:host::ng-deep .p-galleria-thumbnail-item {
+    opacity: 1 !important;
+    transition: none !important;
+    margin-right: 0.5px;
+}
+
+:host::ng-deep .p-galleria-thumbnail-item img:hover {
+    opacity: 1 !important;
+}
+
+:host::ng-deep .p-galleria-thumbnail-item img {
+    padding: 2px;
+    width: 90px;
+    height: 80px;
+    border: none;
+    background: #EEF1DA;
+    border-radius: 15px;
+    object-fit: cover;
+
+
+}
+
+.image-container {
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-right: 3px solid #de9f92;
+    border-left: 3px solid #de9f92;
+    border-top: 3px solid #de9f92;
+    width: 100%;
+    position: relative;
+    padding-top: 90%;
+    overflow: hidden;
+
+}
+
+.main-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  
+}
+
+
+@media (max-width: 768px) {
+    ::ng-deep .p-galleria-thumbnail-item {
+      margin: 0 4px;
+    }
+  }
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #EEF1DA;
+    // border: 1px solid #cf748b;
+    border-radius: 35px;
+
+}
+
+button { 
+    font-size: 15px;
+    border: none;
+    background-color: #b3c88f;
+    cursor: pointer;
+    border-radius: 35px;
+    color: #59595c;
+}
+
+button:hover {
+    background-color: #ccc;
+}
+
+span {
+    font-size: 15px;
+    color: #6b7280;
+    width: 10rem;
+    text-align: center;
+}
+
+:host::ng-deep .p-dropdown  {
+   width: 10rem;
+   height: 3rem;
+
+}
+h2{
+    font-family: 'num';
+    font-size: 17px;
+    padding: 10px;
+}
+h3{
+    font-family: 'num';
+    font-size: 15px;
+    padding-top: 10px; 
+}
+.detail{
+    font-family: 'num';
+    font-size: 11px;
+    color: gray;  
+}
+p{
+    font-family: 'num';
+    font-size: 14px;
+    padding: 10px;
+    color: gray;  
+}
+:host::ng-deep .p-dropdown .p-dropdown-label.p-placeholder {
+    color: #6b7280;
+    font-family: 'num';
+    font-size: 13px;
+
+}
+:host::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+    color: #6b7280;
+    font-family: 'num';
+    font-size: 13px;
+
+}
+:host::ng-deep .p-dropdown-label  {
+    font-size: 14px;
+    font-family: 'num';
+
+}
+.addTo{
+    border-radius: 35px;
+    background-color: rgb(138, 172, 104);
+    font-family: 'num';
+    font-size: 13px;
+}
+
+:host::ng-deep  .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight.p-focus {
+    background: #f2d5dcc2;
+}
+.colors{
+    background-color: #EEF1DA;
+    // border: 1px solid #c23636;
+    border-radius: 25px;
+}
+.textcolor{
+border-bottom: #a1a1a2cf 1px solid;
+}
+
+.colorname{
+    font-family: 'num';
+    color: #59595c;
+}
+
+:host::ng-deep .p-dialog-header {
+    font-family: 'num';
+   
+    background-color: #eef1da;
+    color: #444;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    font-weight: normal;
+  }
+  :host::ng-deep .p-toast{
+    font-family: 'num';
+  }
+  
+  :host::ng-deep .custom-dialog .p-dialog-content {
+    font-family: 'num';
+    background-color: #fefefe;
+    padding: 1rem 0.8rem;
+  }
+  
+  :host::ng-deep .custom-dialog .p-dialog-footer {
+    display: flex;
+    justify-content: center;
+    background-color: #fefefe;
+    padding-bottom: 1rem;
+  }
+  
+  .dialog-text {
+    font-family: 'num';
+    font-size: 13px;
+    color: #555;
+    margin: 0.5rem 0 1rem;
+  }
+  
+  :host::ng-deep .custom-close-button {
+    font-family: 'num';
+    background-color: #8aac68;
+    color: white;
+    border-radius: 20px;
+    padding: 0.3rem 1.2rem;
+    font-size: 12px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  :host::ng-deep .custom-close-button:hover {
+    background-color: #6e8e50;
+  }
+  
+  :host::ng-deep .custom-close-button:focus {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+  

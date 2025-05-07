@@ -1,0 +1,106 @@
+
+@use '@angular/material' as mat;
+@include mat.core();
+$pothos-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+
+:root {
+  @include mat.all-component-themes($pothos-theme);
+}
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+@import "primeflex/themes/primeone-light.css";   
+@import "primeflex/themes/primeone-dark.css";   
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+@font-face {
+    font-family: 'farsi';
+    src: url('../public/fonts/IRANSansWeb.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'iran';
+  src: url('../public/fonts/IranyekanBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'myfont';
+    src: url('../public/fonts/Lexend-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'secreto';
+  src: url('../public/fonts/secreto.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TalmudBavliEn';
+  src: url('../public/fonts/TalmudBavliEn.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// @font-face {
+//   font-family: 'logo';
+//   src: url('../public/fonts/Kalameh_Bold.ttf') format('truetype');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+@font-face {
+  font-family: 'logo';
+  src: url('../public/fonts/AhganiryaPersonalUse-Yznaj.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'num';
+  src: url('../public/fonts/IRANSansWeb\(FaNum\).ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+    --color1: #661512;
+    --color2: #a58c62;
+    --color-bg: #fcfcfc;
+    --color-title: #cc8800;
+    --color-font: #111;
+    --color-font2: #8f0202;
+    
+}
+
+body {
+    font-size: 14px;
+    direction: rtl;
+    color: var(--color-font);
+    background-color:#dae8d3;
+    font-family: myfont !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+a,
+a:hover {
+    outline-color: #ced4da;
+    text-decoration: none;
+    color: inherit;
+}
+

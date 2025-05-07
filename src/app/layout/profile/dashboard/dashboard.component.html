@@ -1,0 +1,75 @@
+<!-- <div class="layout lg:mx-6 mx-2 my-4 ">
+    <div class="sidebar ">
+        <p-button icon="pi pi-home" [label]="isMobile ? '' : 'داشبورد'" styleClass="sidebar-btn"></p-button>
+        <p-button icon="pi pi-shopping-cart" [label]="isMobile ? '' : 'سفارشات'" styleClass="sidebar-btn"></p-button>
+        <p-button icon="pi pi-users" [label]="isMobile ? '' : 'ویرایش حساب کاربری'" styleClass="sidebar-btn"></p-button>
+        <p-button icon="pi pi-sign-out" [label]="isMobile ? '' : 'خروج'"
+            styleClass="sidebar-btn p-button-danger mt-auto">
+        </p-button>
+    </div>
+
+    <div class="main-content">
+
+        <div class="stats">
+            <div class="stat-box color ">
+                <p>سفارشات</p>
+            </div>
+            <div class="stat-box green">
+                <p>ویراش حساب</p>
+            </div>
+            <div class="stat-box pink">
+                <p>خروج از حساب کاربری</p>
+            </div>
+        </div>
+
+        <div class="orders-card p-card">
+            <div class="p-card-header">
+                <h3>سفارشات اخیر</h3>
+            </div>
+            <div class="p-card-body">
+                <p-table [value]="orders" [responsiveLayout]="'scroll'" class="p-datatable-sm custom-orders-table">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>شناسه</th>
+                            <th>تاریخ</th>
+                            <th>وضعیت</th>
+                            <th>مشتری</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-order>
+                        <tr>
+                            <td>{{ order.id }}</td>
+                            <td>{{ order.date }}</td>
+                            <td>
+                                <span class="status" [ngClass]="order.status">
+                                    <i class="pi" [ngClass]="{
+                            'pi-clock': order.status === 'در انتظار',
+                            'pi-check-circle': order.status === 'تکمیل‌شده',
+                            'pi-send': order.status === 'ارسال‌شده'
+                          }"></i>
+                                    {{ order.status }}
+                                </span>
+                            </td>
+                            <td>{{ order.customer }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+
+
+
+        
+    </div>
+</div> -->
+<!-- <div class="dashboard-wrapper">
+    <div class="dashboard-content">
+      <div class="stats">...</div>
+      <div class="orders-card">...</div>
+    </div>
+  
+    <div class="dynamic-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+   -->

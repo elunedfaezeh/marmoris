@@ -1,0 +1,28 @@
+img{
+ width: 120px;
+ align-self: center;
+}
+span{
+  text-align: center;
+}
+.grid{
+  background-color:#faf8e4;
+  border-radius: 10px;
+  padding: 40px;
+  margin: 20px;
+}
+.title {
+  justify-content: center;
+  padding: 60px; 
+  background-image: url('/assets/images/2.png');
+  background-size: cover; 
+  background-position: center;
+}
+.main-title{
+  font-family: 'num';
+  font-size: 20px;
+  color: #fff;
+}
+span{
+  font-family: 'num';
+}

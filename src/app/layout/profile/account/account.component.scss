@@ -1,0 +1,124 @@
+  :host::ng-deep .p-toast .p-toast-message .p-toast-message-content .p-toast-summary {
+    font-size: 16px;
+    font-family: num !important;
+    margin-right: 5px;
+  }
+  .card{
+    border-radius: 15px;
+  }
+  :host::ng-deep .p-toast .p-toast-message .p-toast-message-content .p-toast-detail {
+    font-size: 16px;
+    font-family: num !important;
+  }
+  
+  :host::ng-deep .p-toast .p-toast-message.p-toast-message-error .p-toast-message-icon,
+  .p-toast .p-toast-message.p-toast-message-error .p-toast-icon-close {
+    margin-left: 5px;
+  }
+  
+  :host ::ng-deep .p-dialog .p-dialog-footer {
+    text-align: left !important;
+  }
+  
+  :host::ng-deep .p-datatable .p-datatable-thead>tr>th {
+    font-size: 13px;
+    text-align: right;
+    font-family: num !important;
+  }
+  
+  :host::ng-deep .p-datatable .p-datatable-thead>tr {
+    border-bottom: 1px solid #d7d9db;
+  }
+  label{
+    font-family: num !important;
+
+  }
+  :host::ng-deep .p-datatable .p-datatable-tbody>tr {
+    border-bottom: 1px solid #d7d9db;
+  }
+  
+  :host::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+    font-family: num !important;
+    font-size: 14px;
+    text-align: right;
+  }
+  
+  :host::ng-deep .p-paginator .p-paginator-current {
+    font-family: num !important;
+    font-size: 14px;
+  }
+  
+  :host::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
+    font-family: num !important;
+  }
+  
+  img {
+    border-radius: 5px;
+  }
+  
+  :host::ng-deep .p-button.p-button-icon-only {
+    border-radius: 5px;
+    padding: 2px;
+    width: 30px;
+    background-color: transparent;
+    border: none;
+    color: var(--color1);
+    margin-right: 7px;
+  }
+  
+
+  :host::ng-deep .p-inputtext {
+    font-size: 12px;
+  }
+  
+  :host::ng-deep .p-button .p-button-icon-left {
+    margin-left: 5px;
+  }
+  
+  :host::ng-deep .p-button {
+    background-color:#d68777;
+    border-color: var(--color1);
+    border-radius: 5px;
+    margin-right: 3px;
+  }
+  
+
+  
+  :host::ng-deep .p-button .p-button-label {
+    font-family: num !important;
+    font-size: 13px;
+  }
+  
+  :host::ng-deep .p-inputtext {
+    font-family: num !important;
+    font-size: 14px;
+  }
+  
+  .card {
+    padding: 25px;
+  }
+  
+  input,
+  :host::ng-deep .p-inputtext,
+  :host::ng-deep .p-dropdown,
+  :host::ng-deep .p-chips,
+  .p-inputtext,
+  .p-dropdown,
+  .p-chips,
+  textarea {
+    width: 100% !important;
+    border: 1px solid #d1d5db;
+  }
+  label{
+    margin-bottom: 10px;
+  }
+  :host::ng-deep .p-dropdown-item {
+    font-family: num !important;
+    font-size: 14px;
+  }
+  
+  @media screen and (max-width: 991px) {
+    :host::ng-deep .p-dialog {
+      width: 95%;
+    }
+  }

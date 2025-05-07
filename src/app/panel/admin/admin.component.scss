@@ -1,0 +1,91 @@
+:host::ng-deep .p-toolbar {
+  padding: 8px;
+  background-color: var(--color1);
+  color: #fff;
+}
+
+:host::ng-deep .p-button {
+  color: #fff;
+  font-family: farsi;
+}
+
+:host::ng-deep .p-button:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+  border: none;
+}
+
+
+:host::ng-deep .p-button:focus-within {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+:host::ng-deep input {
+  font-family: farsi;
+  font-size: 12px;
+}
+
+:host::ng-deep .mat-drawer-container {
+  position: absolute;
+  top: 68px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #eff3f8;
+}
+
+:host::ng-deep .p-button .p-tooltip-text {
+  font-family: farsi;
+}
+
+span {
+  font-family: farsi;
+}
+
+:host::ng-deep .mat-drawer {
+  width: 230px;
+  margin-top: .5px;
+}
+
+h6 {
+  font-family: farsi !important;
+  font-size: 16px;
+}
+
+:host::ng-deep .p-panelmenu {
+  margin-top: 40px;
+}
+
+:host::ng-deep .p-panelmenu-header {
+  margin: 2% 12%;
+}
+
+:host::ng-deep .p-panelmenu-header-content {
+  // border-color: #fff;
+}
+
+:host::ng-deep .p-panelmenu-header-action {
+  font-family: farsi;
+  font-size: 12px;
+  color: #444;
+  padding: 10px 10px !important;
+  // background-color: #fff;
+  // border-color: #fff;
+  // border-radius: 30px;
+  // background-color: rgba(#aa8b77,.2);
+  // color: var(--color2);
+}
+
+:host::ng-deep .p-panelmenu-header-action:hover {
+  color: #222;
+}
+
+:host::ng-deep .p-menuitem-icon {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+:host::ng-deep .p-menuitem-icon .pi-chevron-right:before {
+  content: "\e900";
+}

@@ -1,0 +1,12 @@
+<div class="container-fluid my-5 fadeindown animation-duration-1000 animation-iteration-1 animation-delay-100">
+  <div class="banner">
+    <div class="slider" [style.--quantity]="images.length">
+      <div *ngFor="let image of images; let i = index" class="item" [style.--position]="i + 1">
+        <img [src]="image" alt="NDMK gallery">
+      </div>
+    </div>
+    <div class="content">
+      <h1>NDMK AGENCY</h1>
+    </div>
+  </div>
+</div>

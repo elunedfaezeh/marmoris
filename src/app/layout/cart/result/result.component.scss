@@ -1,0 +1,71 @@
+:host::ng-deep .p-button {
+    font-size: 14px;
+    font-family: myfont-bold !important;
+    padding: 8px 20px;
+    border-radius: 5px;
+    background-color: var(--color1);
+    border-color: var(--color1);
+}
+
+:host::ng-deep .p-button:hover {
+    background-color: var(--color1);
+    border-color: var(--color1);
+}
+
+.card {
+    margin: 30px 0;
+    padding: 30px 10px;
+}
+
+.card h2 {
+    font-size: 25px;
+    font-family: myfont-bold !important;
+    margin-top: 15px;
+}
+
+.card i {
+    font-size: 40px;
+}
+
+.card h2,
+.card i {
+    color: red;
+}
+
+.card .success h2,
+.card .success i {
+    color: green;
+}
+
+.card p {
+    font-size: 16px;
+    font-family: myfont !important;
+    margin-top: 20px;
+}
+
+:host::ng-deep .p-button .p-button-label {
+    font-family: myfont !important;
+    font-size: 14px;
+}
+
+@media (max-width: 991px) {
+    :host::ng-deep .p-button .p-button-label {
+        font-size: 12px;
+    }
+
+    .card {
+        padding: 0 30px;
+    }
+
+    :host::ng-deep .p-button {
+        padding: 8px 40px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+}

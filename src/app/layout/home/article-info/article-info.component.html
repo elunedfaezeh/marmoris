@@ -1,0 +1,17 @@
+<div class="flex justify-content-center flex-wrap">
+  <div
+    class="title flex align-items-center  justify-content-center ">
+    <h3 class="main-title pt-4">چرا ما؟</h3>
+  </div>
+</div>
+<div class="container my-5 justify-content-center">
+  <div class="grid">
+    <div class="col-6 lg:col-3 " *ngFor="let item of items">
+      <div class="flex flex-column">
+        <img [src]="item.image" >
+        <span class="pt-2">{{item.title}}</span>
+      
+      </div>
+    </div>
+  </div>
+</div>

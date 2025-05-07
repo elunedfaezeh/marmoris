@@ -1,0 +1,54 @@
+<p-toast position="center"></p-toast>
+
+<div class="">
+  <div class="card mb-5">
+    <form [formGroup]="form" (ngSubmit)="submitForm()" class="w-100">
+      <div class="row">
+        <div class="col-lg-4 col-sm-12 mb-3">
+          <label>موبایل</label>
+          <input type="text" pInputText formControlName="mobile" />
+        </div>
+        <div class="col-lg-4 mb-3">
+          <label>نام و نام خانوادگی</label>
+          <input type="text" pInputText formControlName="fullName" />
+        </div>
+        <div class="col-lg-4 mb-3">
+          <label>تلفن</label>
+          <input type="text" pInputText pKeyFilter="num" formControlName="phone" maxlength="11" minlength="11" />
+        </div>
+        <div class="col-lg-4 mb-3">
+          <label>ایمیل</label>
+          <input type="email" pKeyFilter="email" pInputText formControlName="email" />
+        </div>
+        <div class="col-lg-4 mb-3">
+          <label>استان</label>
+          <p-dropdown emptyFilterMessage="یافت نشد" emptyMessage="یافت نشد" [options]="states" optionLabel="label"
+            (onChange)="stateOnChange($event)" [filter]="true" filterBy="label">
+          </p-dropdown>
+        </div>
+        <div class="col-lg-4 mb-3">
+          <label>شهرستان</label>
+          <p-dropdown emptyFilterMessage="یافت نشد" emptyMessage="یافت نشد" [options]="cities" optionLabel="label"
+            (onChange)="cityOnChange($event)" [filter]="true" filterBy="label">
+          </p-dropdown>
+        </div>
+        <div class="col-lg-12 mb-3">
+          <label>آدرس</label>
+          <textarea type="text" rows="3" pInputText formControlName="address" required></textarea>
+        </div>
+        <!-- <div class="col-lg-12">
+          <label class="panel-form-label">تصویر پروفایل</label>
+          <p-fileUpload chooseLabel="انتخاب" uploadLabel="آپلود" cancelLabel="لغو" [customUpload]="true"
+            (uploadHandler)="onFileUpload($event)" invalidFileSizeMessageDetail="حداکثر سایز فایل 2 مگابایت می باشد"
+            invalidFileSizeMessageSummary="اندازه فایل بیش از حد مجاز می باشد" accept="image/jpeg,image/png"
+            [maxFileSize]="2000000">
+          </p-fileUpload>
+        </div> -->
+      </div>
+      <div class="row text-center mt-3">
+        <p-button type="submit" label="ثبت" [disabled]="form.invalid"></p-button>
+      </div>
+    </form>
+
+  </div>
+</div>
