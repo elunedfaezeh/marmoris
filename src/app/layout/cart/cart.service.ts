@@ -63,4 +63,23 @@ export class CartService {
   getCount(): number {
     return this.getItems().length;
   }
+  validateItems(): { validItems: any[], removedItems: any[] } {
+    const cart = this.getItems();
+    const validItems: any[] = [];
+    const removedItems: any[] = [];
+  
+    cart.forEach(item => {
+      if (item.isAvailable !== false && item.stock !== 0) {
+        validItems.push(item);
+      } else {
+        removedItems.push(item);
+      }
+    });
+  
+    // ذخیره  آیتم‌های معتبر
+    this.saveItems(validItems);
+  
+    return { validItems, removedItems };
+  }
+  
 }

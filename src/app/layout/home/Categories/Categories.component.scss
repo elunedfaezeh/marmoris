@@ -1,0 +1,80 @@
+
+#category{
+  direction: ltr;
+}
+
+.title {
+  font-family: 'num';
+  font-size: 13px;
+  color: #fff;
+  justify-content: center;
+  padding: 70px;
+  background-image: url('/assets/images/2.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.main-title {
+  font-size: 15px;
+  color: #fff;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  min-width: 180px;
+  max-width: 180px;
+  cursor: pointer;
+  margin: 5px; 
+  background-color: #F8F2DE;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  border-radius: 10px;
+  width: 160px;
+  height: 160px;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+.card-title {
+  margin-top: 5px;
+  font-family: 'num';
+  font-size: 13px;
+  color: rgb(83, 82, 82);
+}
+
+
+:host::ng-deep .p-carousel .p-carousel-indicators {
+  display: none;
+}
+
+
+
+
+:host::ng-deep .p-carousel .p-carousel-item {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 575px) {
+  .card {
+    min-width: 140px;  
+    max-width: 140px;
+    margin: 5px;  
+  }
+
+  .card-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .card-title {
+    font-size: 13px;
+  }
+}

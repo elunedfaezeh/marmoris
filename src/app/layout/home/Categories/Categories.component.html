@@ -1,0 +1,18 @@
+<section id="category">
+  <div class="flex justify-content-center flex-wrap">
+    <div class="title flex align-items-center justify-content-center">
+      <h3 class="main-title pt-5">دسته بندی محصولات</h3>
+    </div>
+  </div>
+
+  <p-carousel [value]="cards" [numVisible]="6" [numScroll]="1" [circular]="true"
+    [responsiveOptions]="responsiveOptions">
+    <ng-template let-item pTemplate="item">
+      <div class="card" (click)="navigateToCategory(item.title)">
+        <img class="card-image" [src]="item.imageUrl" alt="Card Image">
+        <div class="card-title">{{ item.title }}</div>
+      </div>
+    </ng-template>
+  </p-carousel>
+
+</section>

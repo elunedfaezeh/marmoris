@@ -10,18 +10,22 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { IActiveDate, NgPersianDatepickerModule } from 'ng-persian-datepicker';
 import { Router } from '@angular/router';
 import { PrimengModule } from '../../primeng.module';
+import { PriceFormatPipe } from '../shared/price-format.pipe';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [PrimengModule, CommonModule, FormsModule, ReactiveFormsModule, NgPersianDatepickerModule],
+  imports: [PrimengModule, CommonModule, FormsModule, ReactiveFormsModule, NgPersianDatepickerModule,PriceFormatPipe],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
   providers: [MessageService, DialogService]
 })
 
 export class CartComponent implements OnInit {
-
+  showUnavailableDialog = false;
+  unavailableItems: string[] = [];
+  
   items: any[] | any;
   form: FormGroup | any;
   date: Date | undefined;
@@ -38,7 +42,9 @@ export class CartComponent implements OnInit {
     private dialogService: DialogService,
     private localStorage: LocalStorageService,
     private service: LayoutService,
-    private router: Router
+    private router: Router,
+    private productService: ProductService 
+
   ) { }
 
   onSelect(event: IActiveDate): void {
@@ -62,17 +68,34 @@ export class CartComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    if (!this.localStorage.getCurrentUser('current') || this.localStorage.userType != 'user') {
-      this.router.navigateByUrl('/auth')
-    }
     this.createForm();
     this.refreshCart();
   }
+  
 
   refreshCart() {
-    this.items = this.cartService.getItems();
+    let cart = this.cartService.getItems();
+    const allProducts = this.productService.getProducts(); // یا getAllProducts اگر داری
+    const removedItems: string[] = [];
+  
+    cart = cart.filter(item => {
+      const product = allProducts.find(p => p.id === item.productID);
+      const valid = product && product.isAvailable && product.stock > 0;
+      if (!valid) removedItems.push(item.title);
+      return valid;
+    });
+  
+    if (removedItems.length > 0) {
+      this.cartService.saveItems(cart);
+      this.unavailableItems = removedItems;
+      this.showUnavailableDialog = true;
+    }
+  
+    this.items = cart;
   }
-
+  
+  
+  
   onDeleteCart(item: any) {
     this.cartService.deleteItem(item);
     this.refreshCart()
@@ -89,11 +112,17 @@ export class CartComponent implements OnInit {
 
   goInfo() {
     if (this.items.length > 0) {
-      this.active++;
+      const currentUser = this.localStorage.getCurrentUser('current');
+      if (!currentUser || this.localStorage.userType !== 'user') {
+        this.router.navigateByUrl('/auth?redirect=cart');
+      } else {
+        this.active++;
+      }
     } else {
       this.messageService.add({ severity: 'error', summary: 'سبد خرید خالی است' });
     }
   }
+  
 
   addOrder() {
     if (this.items.length > 0) {

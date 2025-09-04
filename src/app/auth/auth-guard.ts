@@ -18,28 +18,6 @@ export class AuthGuard implements CanActivate {
     if (this.localstorage.getCurrentUser('current') === true) {
       this.userType = this.localstorage.userJson['type'];
       this.accessLevel = this.localstorage.userJson['accessLevel'];
-      // console.log(route['routeConfig']?.path)
-      if (this.userType === 'admin') {
-        switch (state.url.replace("/panel/", "")) {
-          case "unit":
-            this.title = "واحد فناور";
-            break;
-          case "report":
-            this.title = "گزارش گیری";
-            break;
-          case "config":
-            this.title = "تنظیمات";
-            break;
-          case "payment":
-            this.title = "تسهیلات";
-            break;
-        }
-        this.result = this.accessLevel.filter((item: any) =>
-          item.title === this.title).length > 0
-        if (this.result === true) return true;
-        this.router.navigate(['/panel']);
-        return false;
-      }
     }
     else {
       this.router.navigate(['/']);

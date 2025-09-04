@@ -1,0 +1,74 @@
+<p-toast center></p-toast> 
+
+<p-dialog
+  [(visible)]="displayDialog"
+  [modal]="true"
+  [closable]="false"
+  header="لطفاً رنگ را انتخاب کنید"
+  [style]="{ 'width': '300px', 'text-align': 'center' }"
+  styleClass="custom-dialog"
+>
+  <p class="dialog-text">برای اضافه کردن به سبد خرید، ابتدا یک رنگ انتخاب کنید.</p>
+  <p-footer>
+    <button
+      type="button"
+      pButton
+      label="بستن"
+      class="custom-close-button"
+      (click)="displayDialog = false"
+    ></button>
+  </p-footer>
+</p-dialog>
+
+
+<div class="mt-5">
+    <div class="flex flex-column lg:flex-row gap-5 align-items-center justify-content-center">
+        <div class="main w-full lg:w-5 mb-5 px-3 text-center">
+            <p-galleria *ngIf="product?.images" [value]="product.images" [numVisible]="4" [showThumbnails]="true"
+                [(activeIndex)]="activeIndex">
+                <ng-template pTemplate="item" let-item>
+                    <div class="image-container">
+                        <img [src]="item.url" alt="تصویر محصول" class="main-image" />
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="thumbnail" let-item>
+                    <img [src]="item.url" alt="تصویر محصول" class="img-thumbnail" />
+                </ng-template>
+            </p-galleria>
+        </div>
+        <div class="w-full mb-4 px-4 lg:w-4">
+            <h1 class="title">{{ product?.name }}</h1>
+            <h2>{{ product?.price | priceFormat }} تومان</h2>
+            <p>{{ product?.description }}</p>
+
+            <div class="colors px-3 py-2 shadow-2 mt-5">
+                <h3 class="textcolor text-sm font-semibold mb-4 pb-2">رنگ‌بندی</h3>
+                <div class="flex flex-row flex-wrap align-items-center">
+                    <div *ngFor="let item of Colors" (click)="selectColor(item)"
+                        class="flex flex-row align-items-center cursor-pointer ml-3">
+                        <div class="border-circle border-2 w-2rem h-2rem flex-shrink-0" [ngStyle]="{
+                          'background-color': item.code,
+                          'border-color': selectedColor?.code === item.code ? '#000' : '#ccc',
+                          'transform': selectedColor?.code === item.code ? 'scale(1.1)' : 'scale(1)',
+                          'transition': 'transform 0.2s ease'
+                        }">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-row flex-nowrap justify-center md:justify-start items-center gap-4 mt-6">
+                <div
+                    class="addTo w-18rem h-3rem shadow-2 font-bold flex align-items-center justify-content-center text-white cursor-pointer" (click)="addToCart()">
+                    اضافه کردن به سبد خرید
+                </div>
+                <div class="counter w-7rem h-3rem px-1 shadow-2">
+                    <button class="px-2" (click)="decrease()">-</button>
+                    <span>{{ count }}</span>
+                    <button class="px-2" (click)="increase()">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

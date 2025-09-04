@@ -29,7 +29,7 @@ img {
 }
 
 .bg {
-  background: var(--color1);
+  background: #ecbcb2;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
 }
@@ -38,7 +38,7 @@ input {
   font-size: 14px;
   height: 45px;
   border-radius: 5px;
-  font-family:farsi!important;
+  font-family: farsi !important;
   border: 1px solid #d1d5db;
 }
 
@@ -53,14 +53,16 @@ h1 {
   font-size: 20px;
   font-family: farsi !important;
 }
-h2{
+
+h2 {
   font-family: logo;
   color: #d1d5db;
   font-size: 100px;
 }
+
 :host::ng-deep .p-button {
-  background: var(--color1);
-  border-color: var(--color1);
+  background: #ecbcb2;
+  border-color: #ecbcb2;
   border-radius: 5px;
   margin-top: 30px;
   padding: 10px 20%;
@@ -70,6 +72,7 @@ h2{
 :host::ng-deep .p-button .p-button-label {
   font-family: farsi !important;
   font-size: 16px;
+  color: #000;
 }
 
 
@@ -86,4 +89,10 @@ h2{
     border-bottom-right-radius: 10px;
     border-top-left-radius: 0;
   }
+}
+
+.title {
+  font-family: 'logo';
+  font-size: 40px;
+  color: #000;
 }

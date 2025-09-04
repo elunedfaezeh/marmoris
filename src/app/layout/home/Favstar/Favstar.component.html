@@ -1,0 +1,29 @@
+<div class="card main">
+    <div class="flex justify-content-center flex-wrap">
+        <div class="title flex align-items-center justify-content-center">
+       <h3 class="main-title pt-7">محبوب دلها</h3>  
+        </div>
+      </div>
+    
+    <p-carousel [value]="items" [numVisible]="4" [numScroll]="1" [circular]="true"
+        [responsiveOptions]="responsiveOptions">
+        <ng-template let-item pTemplate="item">
+            <div >
+                <div class="m-4">
+                    <div class="box relative mx-auto">
+                      <img [src]="item.url" [alt]="item.name" class="w-full border-round-2xl img_1"
+                        (click)="showProductDetails(item)" />
+                      <img [src]="item.url2" alt="hippo" class="w-full border-round-2xl img_2"
+                        (click)="showProductDetails(item)" />
+                        <!-- <p-tag icon="pi pi-plus" class="absolute" (click)="addToCart(item)" [ngStyle]="{ 'left.px': 15, 'top.px': 15 }" /> -->
+                      </div>
+                  </div>
+                <div class="flex flex-column align-items-center">
+                    <div class=" items-start font-medium name">{{ item.name }}</div>
+                    <div class=" m-4 price">{{ '' + item.price  | priceFormat }}</div>
+                </div>
+            </div>
+        </ng-template>
+    </p-carousel>
+</div>
+<h2>

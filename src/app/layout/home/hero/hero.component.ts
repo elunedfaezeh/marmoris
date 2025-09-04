@@ -30,7 +30,6 @@ export class HeroComponent {
 
   items: any[] = [
     { url: '/assets/images/hero.jpg' },
-    { url: '/assets/images/hero.jpg' },
 
    
   ];

@@ -11,39 +11,29 @@ import { LayoutService } from '../../layout.service';
   styleUrls: ['./faq.component.scss']
 })
 export class FaqComponent implements OnInit {
+  faqs: any;
+  messageService: any;
+ 
+
+  constructor(private service: LayoutService) { }
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.getFaqs();
   }
-  faqs: any[] = [
-    { question: ' چطور هزینه سفارش رو پرداخت کنم؟', reply: ' جواب' },
-    { question: ' چطور هزینه سفارش رو پرداخت کنم؟', reply: ' جواب' },
-    { question: ' چطور هزینه سفارش رو پرداخت کنم؟', reply: ' جواب' },
 
-
-
-
-
-  ];
-
-  // constructor(private service: LayoutService) { }
-
-  // ngOnInit(): void {
-  //   this.getFaqs();
-  // }
-
-  // getFaqs() {
-  //   this.service.getFaqs()
-  //     .subscribe((response: any) => {
-  //       if (response.success === true) {
-  //         this.faqs = response.data;
-  //       } else {
-  //         // this.messageService.add({
-  //         //   severity: 'error',
-  //         //   summary: ''
-  //         // })
-  //       }
-  //     });
-  // }
+  getFaqs() {
+    this.service.getFaqs()
+      .subscribe((response: any) => {
+        if (response.success === true) {
+          this.faqs = response.data;
+        } else {
+          this.messageService.add({
+            severity: 'error',
+            summary: ''
+          })
+        }
+      });
+  }
   
 
 }

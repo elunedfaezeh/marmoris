@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class AdminService {
 
-  baseUrl = 'https://api.hippo-crafts.com/admin/';
+  baseUrl = 'https://api.marmoris-art.com/admin/';
 
   constructor(private http: HttpClient) { }
 
@@ -143,7 +143,6 @@ export class AdminService {
     return this.http.put(this.baseUrl + 'editOrder/' + id, data, { params });
   }
 
-  //#region Admins
   getAdmins(token: string): any {
     const params = new HttpParams().set('token', token);
     return this.http.get(this.baseUrl + 'getAdmins', { params });
@@ -160,6 +159,5 @@ export class AdminService {
     const params = new HttpParams().set('token', token);
     return this.http.delete(this.baseUrl + 'deleteAdmin/' + id, { params });
   }
-  //#endregion
 
 }

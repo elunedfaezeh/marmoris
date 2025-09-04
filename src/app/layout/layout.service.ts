@@ -10,7 +10,7 @@ export class LayoutService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl = 'https://api.hippo-crafts.com/user/';
+  baseUrl = 'https://api.marmoris-art.com/user/';
 
   sendSms(data: any): any {
     const headers = {
