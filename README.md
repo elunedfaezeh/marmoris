@@ -1,8 +1,8 @@
-![marmoris Screenshot](./public/assets/images/shot.png)
 
 
 ## Marmoris Art 👜🎨
-
+![marmoris Screenshot](./public/assets/images/shot.png)
+---
 Marmoris Art is a modern online shop for Tote Bags 👜 — designed to give users the freedom to choose colors, patterns, and styles for their bags while enjoying a seamless shopping experience. Built with Angular, TypeScript, and PrimeNG, the platform combines beautiful UI/UX design with full admin control.
 
 ## 🌐 Live Demo (https://marmoris-art.com)
@@ -21,3 +21,4 @@ Marmoris Art is a modern online shop for Tote Bags 👜 — designed to give use
 * TypeScript: Ensures maintainable, bug-free code with static typing. Docs (https://www.typescriptlang.org/docs/)
 * PrimeNG: Rich UI components, perfect for responsive e-commerce design. Docs (https://www.primefaces.org/primeng/showcase)
     
+
